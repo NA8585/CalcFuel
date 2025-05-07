@@ -1,0 +1,35 @@
+{
+  "version": "1.0",
+  "name": "Fuel Calculator Overlay",
+  "author": "iRacing User",
+  "description": "Calculadora de combustível para iRacing",
+  "settings": {
+    "default_margin": 2,
+    "alerts": {
+      "low_fuel_threshold": 1.1,
+      "critical_fuel_threshold": 0.8,
+      "pit_window_range": 1
+    },
+    "ui": {
+      "size": {
+        "width": 400,
+        "height": 230
+      }
+    }
+  },
+  "properties": {
+    "created_at": "2025-05-07T23:30:41.202Z",
+    "type": "overlay",
+    "target_simulator": "iRacing",
+    "version_code": 100,
+    "exported_from": "Fuel Calculator Web App",
+    "iracing_data_mapping": {
+      "fuel_level": "Telemetry.FuelLevel",
+      "fuel_per_lap": "Telemetry.FuelPerLap",
+      "laps_remaining": "Telemetry.SessionLapsRemain",
+      "current_lap": "Telemetry.Lap",
+      "max_fuel": "Telemetry.MaxFuel",
+      "is_in_pit": "Telemetry.OnPitRoad"
+    }
+  }
+}
