@@ -1,0 +1,215 @@
+{
+  "Name": "FuelCalculatorOverlay",
+  "Width": 400,
+  "Height": 230,
+  "Components": [
+    {
+      "Type": "Panel",
+      "Name": "Background",
+      "BackColor": "#1E1E1E",
+      "Position": {
+        "X": 0,
+        "Y": 0
+      },
+      "Size": {
+        "Width": 400,
+        "Height": 230
+      }
+    },
+    {
+      "Type": "Label",
+      "Name": "Title",
+      "Text": "FUEL CALCULATOR",
+      "FontSize": 16,
+      "FontColor": "#FFFFFF",
+      "TextAlign": "Center",
+      "Position": {
+        "X": 10,
+        "Y": 10
+      },
+      "Size": {
+        "Width": 380,
+        "Height": 25
+      }
+    },
+    {
+      "Type": "Label",
+      "Name": "FuelLevelLabel",
+      "Text": "Fuel:",
+      "FontSize": 14,
+      "FontColor": "#FFFFFF",
+      "Position": {
+        "X": 15,
+        "Y": 45
+      },
+      "Size": {
+        "Width": 100,
+        "Height": 20
+      }
+    },
+    {
+      "Type": "TextBox",
+      "Name": "FuelLevelValue",
+      "Text": "{Prop:FuelLevel:N1}L",
+      "FontSize": 14,
+      "FontColor": "#FFD700",
+      "Position": {
+        "X": 120,
+        "Y": 45
+      },
+      "Size": {
+        "Width": 80,
+        "Height": 20
+      }
+    },
+    {
+      "Type": "Label",
+      "Name": "FuelPerLapLabel",
+      "Text": "Fuel/Lap:",
+      "FontSize": 14,
+      "FontColor": "#FFFFFF",
+      "Position": {
+        "X": 15,
+        "Y": 75
+      },
+      "Size": {
+        "Width": 100,
+        "Height": 20
+      }
+    },
+    {
+      "Type": "TextBox",
+      "Name": "FuelPerLapValue",
+      "Text": "{Prop:FuelPerLap:N2}L",
+      "FontSize": 14,
+      "FontColor": "#FFD700",
+      "Position": {
+        "X": 120,
+        "Y": 75
+      },
+      "Size": {
+        "Width": 80,
+        "Height": 20
+      }
+    },
+    {
+      "Type": "Label",
+      "Name": "LapsRemainingLabel",
+      "Text": "Laps Left:",
+      "FontSize": 14,
+      "FontColor": "#FFFFFF",
+      "Position": {
+        "X": 15,
+        "Y": 105
+      },
+      "Size": {
+        "Width": 100,
+        "Height": 20
+      }
+    },
+    {
+      "Type": "TextBox",
+      "Name": "LapsRemainingValue",
+      "Text": "{Calc:FuelLevel/FuelPerLap:N1}",
+      "FontSize": 14,
+      "FontColor": "#FFD700",
+      "Position": {
+        "X": 120,
+        "Y": 105
+      },
+      "Size": {
+        "Width": 80,
+        "Height": 20
+      }
+    },
+    {
+      "Type": "Label",
+      "Name": "RefuelLabel",
+      "Text": "Need to add:",
+      "FontSize": 14,
+      "FontColor": "#FFFFFF",
+      "Position": {
+        "X": 15,
+        "Y": 135
+      },
+      "Size": {
+        "Width": 100,
+        "Height": 20
+      }
+    },
+    {
+      "Type": "TextBox",
+      "Name": "RefuelValue",
+      "Text": "{Prop:RefuelAmount:N1}L",
+      "FontSize": 14,
+      "FontColor": "#FFD700",
+      "Position": {
+        "X": 120,
+        "Y": 135
+      },
+      "Size": {
+        "Width": 80,
+        "Height": 20
+      }
+    },
+    {
+      "Type": "Label",
+      "Name": "PitLapLabel",
+      "Text": "Pit on lap:",
+      "FontSize": 14,
+      "FontColor": "#FFFFFF",
+      "Position": {
+        "X": 15,
+        "Y": 165
+      },
+      "Size": {
+        "Width": 100,
+        "Height": 20
+      }
+    },
+    {
+      "Type": "TextBox",
+      "Name": "PitLapValue",
+      "Text": "{Prop:OptimalPitLap:N0}",
+      "FontSize": 14,
+      "FontColor": "#FFD700",
+      "Position": {
+        "X": 120,
+        "Y": 165
+      },
+      "Size": {
+        "Width": 80,
+        "Height": 20
+      }
+    },
+    {
+      "Type": "Panel",
+      "Name": "StatusIndicator",
+      "BackColor": "{Calc:IIf(FuelLevel/FuelPerLap < 3, '#FF0000', IIf(FuelLevel/FuelPerLap < 5, '#FFFF00', '#00FF00'))}",
+      "Position": {
+        "X": 360,
+        "Y": 10
+      },
+      "Size": {
+        "Width": 30,
+        "Height": 30
+      }
+    },
+    {
+      "Type": "Label",
+      "Name": "PitWindowIndicator",
+      "Text": "{Calc:IIf(IsInPitWindow, 'PIT NOW', '')}",
+      "FontSize": 18,
+      "FontColor": "#FF0000",
+      "TextAlign": "Center",
+      "Position": {
+        "X": 10,
+        "Y": 190
+      },
+      "Size": {
+        "Width": 380,
+        "Height": 30
+      }
+    }
+  ]
+}
